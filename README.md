@@ -25,6 +25,17 @@ It's your responsibility to rotate the logs
 
     05 00 * * * ~/scripts/jenkins.php /var/log/apache2/*.error.log | mail -s "Jenkins report" YOURMAIL@GMAIL.com
 
+## Installation
+
+The whole script is a self-contained PHP file, so download `jenkins.php` from this repository and put it in a
+convenient place on your system.
+
+## Testing
+
+PHPUnit tests coverage is provided. To run tests:
+
+    phpunit test
+
 ## Changelog
 
 ### 2012-04-06 - 0.3
