@@ -7,7 +7,7 @@
 
 ## Recommended usage - add to logrotate
 
-In /etc/logrotate.d/apache2
+In `/etc/logrotate.d/apache2`
 
     /var/log/apache2/*.error.log {
       # other logrotate options here...
@@ -23,7 +23,7 @@ In /etc/logrotate.d/apache2
 
 It's your responsibility to rotate the logs
 
-    05 00 * * * www ~/scripts/jenkins.php /var/log/apache2/*.error.log | mail -s "Jenkins report" YOURMAIL@GMAIL.com
+    05 00 * * * ~/scripts/jenkins.php /var/log/apache2/*.error.log | mail -s "Jenkins report" YOURMAIL@GMAIL.com
 
 ## Changelog
 
