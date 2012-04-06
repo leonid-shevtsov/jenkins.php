@@ -7,6 +7,8 @@
 
 ## Recommended usage - add to logrotate
 
+In /etc/logrotate.d/apache2
+
     /var/log/apache2/*.error.log {
       # other logrotate options here...
 
