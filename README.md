@@ -1,5 +1,6 @@
 # Jenkins 0.3 - a PHP-on-Apache log analyzer
 
+*This tool has nothing to do with the Jenkins CI server. If anything, I had the name earlier. :)*
 
 ## Usage
 
@@ -41,7 +42,7 @@ PHPUnit tests coverage is provided. To run tests:
 ### 2012-04-06 - 0.3
 
 * Stripped out log rotation and mailing in favor of KISS.
-* Code cleanupxx
+* Code cleanup
 * Github release.
 
 ### 2008-08-25 - 0.2
