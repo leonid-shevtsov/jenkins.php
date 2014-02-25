@@ -1,0 +1,20 @@
+*.svn
+*nbprojects
+*nbproject
+*.project
+*obj/
+*Properties/
+*.psd
+
+
+
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+/userfiles
