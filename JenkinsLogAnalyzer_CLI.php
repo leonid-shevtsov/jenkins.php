@@ -28,7 +28,7 @@ class JenkinsLogAnalyzer_CLI {
         $this->parseCommandLine();
         if ($this->log_files) {
             foreach ($this->log_files as $log_file) {
-                $this->processLogFile($log_file);
+                $this->notifyAdapter->notify($this->processLogFile($log_file));
             }
             return 0;
         } else {
@@ -78,7 +78,7 @@ class JenkinsLogAnalyzer_CLI {
         fclose($log_file);
 
         $generator = new JenkinsLogAnalyzer_HtmlGenerator($log_filename, $analyzer);
-        print $generator->generateReport();
+        return $generator->generateReport();
     }
 
 }

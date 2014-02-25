@@ -1,6 +1,6 @@
 <?php
 
-require_once 'jenkins.php';
+require_once __DIR__ .'/../jenkins.php';
 
 class JenkinsLogAnalyzerTest extends PHPUnit_Framework_TestCase {
   public function testProcessingLineByLine() {
