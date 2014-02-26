@@ -1,6 +1,6 @@
 <?php
 
-require_once 'jenkins.php';
+require_once __DIR__ .'/../jenkins.php';
 
 class JenkinsLogAnalyzer_ErrorFactoryTest extends PHPUnit_Framework_TestCase {
   public function testFromLineIncorrect() {
