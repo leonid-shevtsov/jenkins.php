@@ -41,8 +41,9 @@ for add new types of notification, you might  implement the interface INotificat
         }
     }
 
-//jenkins.php
-$cli = new \JenkinsLogAnalyzer\CLI($_SERVER['argc'], $_SERVER['argv'], new MailAdapter);
+    //jenkins.php
+
+    $cli = new \JenkinsLogAnalyzer\CLI($_SERVER['argc'], $_SERVER['argv'], new MailAdapter);
 
 ## Testing
 
