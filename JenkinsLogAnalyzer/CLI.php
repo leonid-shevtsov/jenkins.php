@@ -1,12 +1,13 @@
 <?php
+namespace JenkinsLogAnalyzer;
 
 /**
- * Description of JenkinsLogAnalyzer_CLI
+ * Description of CLI
  *
  * @author User
  */
 
-class JenkinsLogAnalyzer_CLI {
+class CLI {
 
     private $notifyAdapter;
 
@@ -67,11 +68,11 @@ class JenkinsLogAnalyzer_CLI {
     private function processLogFile($log_filename)
     {
         $log_file = fopen($log_filename, 'r');
-        $analyzer = new JenkinsLogAnalyzer($log_file);
+        $analyzer = new LogAnalyzer($log_file);
         $analyzer->process();
         fclose($log_file);
 
-        $generator = new JenkinsLogAnalyzer_HtmlGenerator($log_filename, $analyzer);
+        $generator = new HtmlGenerator($log_filename, $analyzer);
         return $generator->generateReport();
     }
 

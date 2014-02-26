@@ -1,16 +1,16 @@
 <?php
-require_once __DIR__. '/INotifyAdapter.php';
+require_once __DIR__. '/JenkinsLogAnalyzer/INotifyAdapter.php';
 require_once __DIR__. '/MailAdapter.php';
-require_once  __DIR__.'/JenkinsLogAnalyzer.php';
-require_once  __DIR__.'/JenkinsLogAnalyzer_CLI.php';
-require_once  __DIR__.'/JenkinsLogAnalyzer_Error.php';
-require_once  __DIR__.'/JenkinsLogAnalyzer_ErrorFactory.php';
-require_once  __DIR__.'/JenkinsLogAnalyzer_ErrorStore.php';
-require_once  __DIR__.'/JenkinsLogAnalyzer_HtmlGenerator.php';
+require_once  __DIR__.'/JenkinsLogAnalyzer/LogAnalyzer.php';
+require_once  __DIR__.'/JenkinsLogAnalyzer/CLI.php';
+require_once  __DIR__.'/JenkinsLogAnalyzer/Error.php';
+require_once  __DIR__.'/JenkinsLogAnalyzer/ErrorFactory.php';
+require_once  __DIR__.'/JenkinsLogAnalyzer/ErrorStore.php';
+require_once  __DIR__.'/JenkinsLogAnalyzer/HtmlGenerator.php';
 
 
 if (__FILE__ == realpath($_SERVER['SCRIPT_FILENAME'])) {
-    $cli = new JenkinsLogAnalyzer_CLI($_SERVER['argc'], $_SERVER['argv'], new MailAdapter);
+    $cli = new \JenkinsLogAnalyzer\CLI($_SERVER['argc'], $_SERVER['argv'], new MailAdapter);
     exit($cli->run());
 }
 

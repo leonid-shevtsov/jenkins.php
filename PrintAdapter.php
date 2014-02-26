@@ -1,12 +1,12 @@
 <?php
-
+use JenkinsLogAnalyzer\INotifyAdapter;
 
 /**
- * Description of MailAdapter
+ * Class adapter for notify onlu Printing the report
  *
  * @author Alexsandro Souza
  */
-class PrintAdapter implements NotifyAdapter {
+class PrintAdapter implements INotifyAdapter {
     public function notify($report)
     {
         print $report;

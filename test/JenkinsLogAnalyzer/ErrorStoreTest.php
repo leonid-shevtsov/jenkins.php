@@ -1,10 +1,11 @@
 <?php
+namespace JenkinsLogAnalyzer;
 
-require_once __DIR__ .'/../jenkins.php';
+require_once __DIR__ .'/../../jenkins.php';
 
-class JenkinsLogAnalyzer_ErrorStoreTest extends PHPUnit_Framework_TestCase {
+class ErrorStoreTest extends \PHPUnit_Framework_TestCase {
   public function testRegisterShouldAppendTheError() {
-    $store = new JenkinsLogAnalyzer_ErrorStore();
+    $store = new ErrorStore();
 
     $error = $this->mockError();
     $store->register($error);
@@ -14,7 +15,7 @@ class JenkinsLogAnalyzer_ErrorStoreTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testTwoErrorsShouldRegisterSeparately() {
-    $store = new JenkinsLogAnalyzer_ErrorStore();
+    $store = new ErrorStore();
     $error1 = $this->mockError('key1');
     $store->register($error1);
 
@@ -25,7 +26,7 @@ class JenkinsLogAnalyzer_ErrorStoreTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testSameErrorShouldRegisterIntoTheOldOne() {
-    $store = new JenkinsLogAnalyzer_ErrorStore();
+    $store = new ErrorStore();
     $error1 = $this->mockError('same key');
     $store->register($error1);
 
@@ -39,7 +40,7 @@ class JenkinsLogAnalyzer_ErrorStoreTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testCountShouldReturnSumOfAllErrorCounts() {
-    $store = new JenkinsLogAnalyzer_ErrorStore();
+    $store = new ErrorStore();
     $error1 = $this->mockError('key1');
     $error1->occurence_count = 2;
     $store->register($error1);
@@ -52,7 +53,7 @@ class JenkinsLogAnalyzer_ErrorStoreTest extends PHPUnit_Framework_TestCase {
   }
   
   public function testUniqualCountShouldReturnNumberOfErrors() {
-    $store = new JenkinsLogAnalyzer_ErrorStore();
+    $store = new ErrorStore();
     $error1 = $this->mockError('key1');
     $error1->occurence_count = 2;
     $store->register($error1);

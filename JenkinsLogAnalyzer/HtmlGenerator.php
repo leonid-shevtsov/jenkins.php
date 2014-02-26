@@ -1,4 +1,5 @@
 <?php
+namespace JenkinsLogAnalyzer;
 
 /**
  * Description of JenkinsLogAnalyzer_HtmlGenerator
@@ -6,7 +7,7 @@
  * @author User
  */
 
-class JenkinsLogAnalyzer_HtmlGenerator {
+class HtmlGenerator {
 
     private $colors = array(
         'Notice' => '#4a6d00',
@@ -47,7 +48,7 @@ class JenkinsLogAnalyzer_HtmlGenerator {
         ?>
         <hr>
         Report generated at <?php echo date('r'); ?><br>
-        <a href="http://github.com/leonid-shevtsov/jenkins.php">Jenkins</a> <?php echo JenkinsLogAnalyzer::VERSION ?> - an PHP-on-Apache error log analyzer<br>
+        <a href="http://github.com/leonid-shevtsov/jenkins.php">Jenkins</a> <?php echo LogAnalyzer::VERSION ?> - an PHP-on-Apache error log analyzer<br>
         &copy; 2012 <a href="http://leonid.shevtsov.me">Leonid Shevtsov</a> 
         <?php
         $report = ob_get_contents();

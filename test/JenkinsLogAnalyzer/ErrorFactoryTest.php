@@ -1,10 +1,11 @@
 <?php
+namespace JenkinsLogAnalyzer;
 
-require_once __DIR__ .'/../jenkins.php';
+require_once __DIR__ .'/../../jenkins.php';
 
-class JenkinsLogAnalyzer_ErrorFactoryTest extends PHPUnit_Framework_TestCase {
+class ErrorFactoryTest extends \PHPUnit_Framework_TestCase {
   public function testFromLineIncorrect() {
-    $factory = new JenkinsLogAnalyzer_ErrorFactory;
+    $factory = new ErrorFactory;
     $error = $factory->fromLine('This is not a PHP error');
 
     $this->assertEmpty($error);
@@ -17,7 +18,7 @@ class JenkinsLogAnalyzer_ErrorFactoryTest extends PHPUnit_Framework_TestCase {
     $filename = '/var/www/myfile.php';
     $line = '123';
 
-    $factory = new JenkinsLogAnalyzer_ErrorFactory;
+    $factory = new ErrorFactory;
     $error = $factory->fromLine("[$time] [error] [client 192.168.1.103] PHP $type:  $message in $filename on line $line");
 
     $this->assertEquals(1000000, $error->occurence_times[0]);

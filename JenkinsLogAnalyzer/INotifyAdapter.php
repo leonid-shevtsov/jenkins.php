@@ -1,10 +1,10 @@
 <?php
-
+namespace JenkinsLogAnalyzer;
 
 /**
  *
  * @author Alexsandro Souza
  */
-interface NotifyAdapter {
+interface INotifyAdapter {
     public function notify($report);
 }

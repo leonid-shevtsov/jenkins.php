@@ -1,14 +1,14 @@
 <?php
-
+namespace JenkinsLogAnalyzer;
 
 /**
- * Description of JenkinsLogAnalyzer_Error
+ * Description of Error
  *
  * @author User
  */
 
 
-class JenkinsLogAnalyzer_Error {
+class Error {
 
     public $type;
     public $message;

@@ -1,19 +1,19 @@
 <?php
-
+namespace JenkinsLogAnalyzer;
 /**
- * Description of JenkinsLogAnalyzer_ErrorFactory
+ * Description of ErrorFactory
  *
  * @author User
  */
 
-class JenkinsLogAnalyzer_ErrorFactory {
+class ErrorFactory {
 
     function fromLine($line)
     {
         preg_match('@^\[([^\]]+)] \[[^\]]+] \[[^\]]+] PHP ([^:]+): (.+) in (.+) on line (\d+)(, referer: (.+)|)$@', $line, $matches);
 
         if (sizeof($matches) > 0) {
-            return new JenkinsLogAnalyzer_Error(array(
+            return new Error(array(
                 'time' => strtotime($matches[1]),
                 'type' => trim($matches[2]),
                 'message' => trim($matches[3]),

@@ -1,4 +1,5 @@
 <?php
+namespace JenkinsLogAnalyzer;
 
 /**
  * Description of JenkinsLogAnalyzer
@@ -6,7 +7,7 @@
  * @author User
  */
 
-class JenkinsLogAnalyzer {
+class LogAnalyzer {
 
     const VERSION = '0.3';
 
@@ -16,8 +17,8 @@ class JenkinsLogAnalyzer {
     function __construct($log_stream, $error_factory = null, $error_store = null)
     {
         $this->log_stream = $log_stream;
-        $this->error_factory = $error_factory ? $error_factory : new JenkinsLogAnalyzer_ErrorFactory();
-        $this->errors = $error_store ? $error_store : new JenkinsLogAnalyzer_ErrorStore();
+        $this->error_factory = $error_factory ? $error_factory : new ErrorFactory();
+        $this->errors = $error_store ? $error_store : new ErrorStore();
     }
 
     function process()

@@ -1,12 +1,12 @@
 <?php
-
+use JenkinsLogAnalyzer\INotifyAdapter;
 
 /**
- * Description of MailAdapter
+ * Class adapter for notify by Email
  *
  * @author Alexsandro Souza
  */
-class MailAdapter implements NotifyAdapter {
+class MailAdapter implements INotifyAdapter {
     public function notify($report)
     {
         echo "Email enviado";

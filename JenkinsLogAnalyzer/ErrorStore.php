@@ -1,12 +1,12 @@
 <?php
-
+namespace JenkinsLogAnalyzer;
 
 /**
- * Description of JenkinsLogAnalyzer_ErrorStore
+ * Description of ErrorStore
  *
  * @author User
  */
-class JenkinsLogAnalyzer_ErrorStore {
+class ErrorStore {
 
     public $errors_hash = array();
 
