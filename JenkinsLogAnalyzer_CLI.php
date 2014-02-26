@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of JenkinsLogAnalyzer_CLI
  *
@@ -16,7 +10,7 @@ class JenkinsLogAnalyzer_CLI {
 
     private $notifyAdapter;
 
-    function __construct($argc, $argv, $notifyAdapter)
+    function __construct($argc, $argv, INotifyAdapter $notifyAdapter)
     {
         $this->argc = $argc;
         $this->argv = $argv;
