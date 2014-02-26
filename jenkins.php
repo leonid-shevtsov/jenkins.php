@@ -10,7 +10,7 @@ require_once  __DIR__.'/JenkinsLogAnalyzer/HtmlGenerator.php';
 
 
 if (__FILE__ == realpath($_SERVER['SCRIPT_FILENAME'])) {
-    $cli = new \JenkinsLogAnalyzer\CLI($_SERVER['argc'], $_SERVER['argv'], new MailAdapter);
+    $cli = new \JenkinsLogAnalyzer\CLI($_SERVER['argc'], $_SERVER['argv'], new PrintAdapter);
     exit($cli->run());
 }
 

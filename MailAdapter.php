@@ -9,6 +9,6 @@ use JenkinsLogAnalyzer\INotifyAdapter;
 class MailAdapter implements INotifyAdapter {
     public function notify($report)
     {
-        echo "Email enviado";
+        //send e-mail
     }
 }
