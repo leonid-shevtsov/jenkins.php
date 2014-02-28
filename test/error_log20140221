@@ -26,6 +26,7 @@
 [Thu Feb 20 16:15:51 2014] [error] [client 200.148.142.250] PHP Deprecated:  Comments starting with '#' are deprecated in /home/storage/3/c1/55/salveqa/php.ini on line 158 in Unknown on line 0
 [Thu Feb 20 16:15:51 2014] [error] [client 200.148.142.250] PHP Deprecated:  Directive 'register_globals' is deprecated in PHP 5.3 and greater in Unknown on line 0
 [Thu Feb 20 16:15:51 2014] [error] [client 200.148.142.250] <br />
+
 [Thu Feb 20 16:15:51 2014] [error] [client 200.148.142.250] <b>Deprecated</b>:  Directive 'register_globals' is deprecated in PHP 5.3 and greater in <b>Unknown</b> on line <b>0</b><br />
 [Thu Feb 20 16:15:51 2014] [error] [client 200.148.142.250] PHP Deprecated:  Directive 'register_long_arrays' is deprecated in PHP 5.3 and greater in Unknown on line 0
 [Thu Feb 20 16:15:51 2014] [error] [client 200.148.142.250] <br />

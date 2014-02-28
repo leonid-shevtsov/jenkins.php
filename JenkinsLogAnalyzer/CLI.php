@@ -1,4 +1,5 @@
 <?php
+
 namespace JenkinsLogAnalyzer;
 
 /**
@@ -6,7 +7,6 @@ namespace JenkinsLogAnalyzer;
  *
  * @author User
  */
-
 class CLI {
 
     private $notifyAdapter;
@@ -18,12 +18,29 @@ class CLI {
         $this->notifyAdapter = $notifyAdapter;
     }
 
-    function run()
+    /**
+     * Checks if the file has changed
+     * */
+    public  function wasChanged($log_file, $timestamp)
+    {
+        $filemtime = filemtime($log_file);
+        if (time() > ($filemtime + (60 * $timestamp))) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @params $timestamp time in minutes of last verification
+     */
+    function run($timestamp = null)
     {
         $this->parseCommandLine();
         if ($this->log_files) {
             foreach ($this->log_files as $log_file) {
-                $this->notifyAdapter->notify($this->processLogFile($log_file));
+                if ($this->wasChanged($log_file, $timestamp)) {
+                    $this->notifyAdapter->notify($this->processLogFile($log_file));
+                }
             }
             return 0;
         } else {
