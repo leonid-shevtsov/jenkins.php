@@ -25,9 +25,9 @@ class CLI {
     {
         $filemtime = filemtime($log_file);
         if (time() > ($filemtime + (60 * $timestamp))) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     /**
