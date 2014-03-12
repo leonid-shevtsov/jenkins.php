@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__. '/JenkinsLogAnalyzer/INotifyAdapter.php';
 require_once __DIR__. '/MailAdapter.php';
 require_once __DIR__. '/PrintAdapter.php';

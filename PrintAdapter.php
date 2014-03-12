@@ -7,7 +7,7 @@ use JenkinsLogAnalyzer\INotifyAdapter;
  * @author Alexsandro Souza
  */
 class PrintAdapter implements INotifyAdapter {
-    public function notify($report)
+    public function notify($report, $logAnalyzer)
     {
         print $report;
     }

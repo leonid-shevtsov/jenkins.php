@@ -22,7 +22,7 @@ class CLI {
      * Checks if the file has changed
      * */
     public  function wasChanged($log_file, $timestamp)
-    {
+    { 
         $filemtime = filemtime($log_file);
         if (time() > ($filemtime + (60 * $timestamp))) {
             return false;
@@ -39,7 +39,9 @@ class CLI {
         if ($this->log_files) {
             foreach ($this->log_files as $log_file) {
                 if ($this->wasChanged($log_file, $timestamp)) {
-                    $this->notifyAdapter->notify($this->processLogFile($log_file));
+                    $analyzer = $this->processLogFile($log_file);
+                    $report = $this->generateReport($log_file, $analyzer);
+                    $this->notifyAdapter->notify($report, $analyzer);
                 }
             }
             return 0;
@@ -88,9 +90,14 @@ class CLI {
         $analyzer = new LogAnalyzer($log_file);
         $analyzer->process();
         fclose($log_file);
-
+        return $analyzer;
+    }
+    
+    private function generateReport($log_filename, $analyzer)
+    {
         $generator = new HtmlGenerator($log_filename, $analyzer);
         return $generator->generateReport();
     }
+    
 
 }
