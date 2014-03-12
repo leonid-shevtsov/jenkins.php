@@ -10,7 +10,7 @@
 
 In `/etc/logrotate.d/apache2`
 
-    /var/log/apache2/*.error.log {
+	/var/log/apache2/*.error.log {
       # other logrotate options here...
 
       delaycompress
@@ -30,6 +30,20 @@ It's your responsibility to rotate the logs
 
 The whole script is a self-contained PHP file, so download `jenkins.php` from this repository and put it in a
 convenient place on your system.
+
+## Adapter types of notifications
+
+for add new types of notification, you might  implement the interface INotification and instance this class in jenkins.php.
+ 
+    class MailAdapter implements JenkinsLogAnalyzer\INotifyAdapter {
+        public function notify($report) {
+            //send e-mail authenticated
+        }
+    }
+
+    //jenkins.php
+
+    $cli = new \JenkinsLogAnalyzer\CLI($_SERVER['argc'], $_SERVER['argv'], new MailAdapter);
 
 ## Testing
 
